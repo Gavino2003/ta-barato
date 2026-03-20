@@ -2,8 +2,7 @@
   "installCommand": "PUPPETEER_SKIP_DOWNLOAD=true PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install",
   "functions": {
     "app/api/**/*.js": {
-      "maxDuration": 60,
-      "memory": 3008
+      "maxDuration": 60
     }
   },
   "env": {
