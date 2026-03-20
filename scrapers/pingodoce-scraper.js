@@ -39,10 +39,10 @@ async function scrapePingoDoce(searchQuery) {
 
     await page.goto(searchUrl, {
       waitUntil: 'domcontentloaded',
-      timeout: 15000
+      timeout: 18000
     })
 
-    await sleep(1200)
+    await sleep(800)
     console.log('✓ Pesquisa executada')
 
     // Procurar produtos

@@ -53,7 +53,7 @@ async function scrapeMinipeco(searchQuery) {
       try {
         await page.goto(url, {
           waitUntil: 'domcontentloaded',
-          timeout: 12000
+          timeout: 15000
         })
 
         await sleep(800)

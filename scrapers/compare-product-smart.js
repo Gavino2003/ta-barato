@@ -57,7 +57,7 @@ function normalizarNome(nome) {
 }
 
 async function compareProductSmart(searchQuery) {
-  const scraperTimeoutMs = Number(process.env.SCRAPER_TIMEOUT_MS || (isServerlessRuntime() ? 18000 : 25000))
+  const scraperTimeoutMs = Number(process.env.SCRAPER_TIMEOUT_MS || (isServerlessRuntime() ? 30000 : 35000))
 
   console.log(`\n🔍 COMPARADOR INTELIGENTE - ${searchQuery}`)
   console.log('='.repeat(80))

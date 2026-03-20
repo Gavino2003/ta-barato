@@ -1,36 +1,36 @@
 [
   {
     "id": 1,
-    "produto": "leite",
+    "produto": "arroz",
     "categoria": "Mercearia",
     "precos": {
       "continente": {
-        "preco": 0.86,
-        "quantidade": "emb. 1 lt",
-        "marca": "Leite",
-        "nome": "Leite UHT Meio Gordo Continente",
-        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw8581d663/images/col/687/6879912-frente.jpg?sw=280&sh=280",
-        "url": "https://www.continente.pt/produto/leite-uht-meio-gordo-continente-continente-6879912.html"
+        "preco": 1.59,
+        "quantidade": "emb. 1 kg",
+        "marca": "Arroz",
+        "nome": "Arroz Carolino Bom Sucesso",
+        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwabb24884/images/col/276/2769753-frente.png?sw=280&sh=280",
+        "url": "https://www.continente.pt/produto/arroz-carolino-bom-sucesso-bom-sucesso-2769753.html"
       },
       "pingodoce": {
-        "preco": 0.86,
-        "quantidade": "1 L",
+        "preco": 1.99,
+        "quantidade": "1 Kg",
         "marca": "Pingo Doce",
-        "nome": "Leite UHT Meio Gordo",
-        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dw509c2147/images/medium/48150_851680f4ffe27c50deefb140a64913a4.png?sw=198",
-        "url": "https://www.pingodoce.pt/home/produtos/leite-e-bebidas-vegetais%E2%80%8B/leite/leite-meio-gordo-e-gordo%E2%80%8B/leite-uht-meio-gordo-pingo-doce-48150.html"
+        "nome": "Arroz Basmati",
+        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dw88b3b9ad/images/medium/651101_a04370455f4a1deddb4ab4f9ae27d0e2.png?sw=198",
+        "url": "https://www.pingodoce.pt/home/produtos/mercearia/arroz-massa-e-leguminosas/arroz/arroz-basmati-pingo-doce-651101.html"
       },
       "minipreco": {
-        "preco": 1.29,
-        "quantidade": "1 L",
-        "marca": "MIMOSA",
-        "nome": "MIMOSA Leite Magro Sem Lactose 1 L",
-        "imagem": "https://s1.minipreco.pt/medias/h69/hb7/9081774702622.jpg",
-        "url": "https://www.minipreco.pt/produtos/laticinios-e-ovos/leite/bebidas-vegetais/p/195043"
+        "preco": 2.99,
+        "quantidade": "1 kg",
+        "marca": "CAÇAROLA",
+        "nome": "CAÇAROLA Arroz Basmati 1 kg",
+        "imagem": "https://s3.minipreco.pt/medias/h6e/h3d/9109270265886.jpg",
+        "url": "https://www.minipreco.pt/produtos/mercearia/acompanhamentos/arroz/p/20178"
       }
     },
     "maisBarato": "continente",
     "produtosSemelhantes": true,
-    "dataAtualizacao": "2026-03-20T16:43:21.202Z"
+    "dataAtualizacao": "2026-03-20T17:48:43.178Z"
   }
 ]
