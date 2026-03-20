@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "nome": "Leite UHT Meio Gordo Mimosa",
+    "categoria": "Lactin\u00edos",
+    "preco": 0.90,
+    "quantidade": "1 lt",
+    "marca": "Mimosa",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw88e2e8ab/images/col/742/7426158-frente.jpg",
+    "descricao": "Leite UHT meio gordo"
+  },
+  {
+    "id": 2,
+    "nome": "Arroz Agulha Continente",
+    "categoria": "Mercearia",
+    "preco": 1.59,
+    "quantidade": "1 kg",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw1234567/images/col/arroz.jpg",
+    "descricao": "Arroz agulha tipo 1"
+  },
+  {
+    "id": 3,
+    "nome": "Ovos Frescos Tamanho M",
+    "categoria": "Ovos",
+    "preco": 2.86,
+    "quantidade": "12 un",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw7654321/images/col/ovos.jpg",
+    "descricao": "Ovos frescos tamanho M"
+  },
+  {
+    "id": 4,
+    "nome": "Azeite Virgem Extra Continente",
+    "categoria": "Mercearia",
+    "preco": 3.39,
+    "quantidade": "750 ml",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw1111111/images/col/azeite.jpg",
+    "descricao": "Azeite virgem extra"
+  },
+  {
+    "id": 5,
+    "nome": "Massa Esparguete Continente",
+    "categoria": "Mercearia",
+    "preco": 0.69,
+    "quantidade": "500 g",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw2222222/images/col/massa.jpg",
+    "descricao": "Massa esparguete"
+  },
+  {
+    "id": 6,
+    "nome": "\u00c1gua Mineral Natural Continente",
+    "categoria": "Bebidas",
+    "preco": 0.19,
+    "quantidade": "1.5 lt",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw3333333/images/col/agua.jpg",
+    "descricao": "\u00c1gua mineral natural"
+  },
+  {
+    "id": 7,
+    "nome": "Caf\u00e9 Mo\u00eddo Delta",
+    "categoria": "Mercearia",
+    "preco": 3.69,
+    "quantidade": "250 g",
+    "marca": "Delta",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw4444444/images/col/cafe.jpg",
+    "descricao": "Caf\u00e9 mo\u00eddo"
+  },
+  {
+    "id": 8,
+    "nome": "A\u00e7\u00facar Branco Continente",
+    "categoria": "Mercearia",
+    "preco": 0.99,
+    "quantidade": "1 kg",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw5555555/images/col/acucar.jpg",
+    "descricao": "A\u00e7\u00facar branco"
+  },
+  {
+    "id": 9,
+    "nome": "Farinha Tipo 65 Continente",
+    "categoria": "Mercearia",
+    "preco": 0.69,
+    "quantidade": "1 kg",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw6666666/images/col/farinha.jpg",
+    "descricao": "Farinha de trigo tipo 65"
+  },
+  {
+    "id": 10,
+    "nome": "Manteiga com Sal Continente",
+    "categoria": "Lactin\u00edos",
+    "preco": 1.99,
+    "quantidade": "250 g",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw7777777/images/col/manteiga.jpg",
+    "descricao": "Manteiga com sal"
+  },
+  {
+    "id": 11,
+    "nome": "P\u00e3o de Forma Continente",
+    "categoria": "Padaria",
+    "preco": 0.89,
+    "quantidade": "650 g",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw8888888/images/col/pao.jpg",
+    "descricao": "P\u00e3o de forma branco"
+  },
+  {
+    "id": 12,
+    "nome": "Queijo Flamengo Continente",
+    "categoria": "Lactin\u00edos",
+    "preco": 5.99,
+    "quantidade": "500 g",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw9999999/images/col/queijo.jpg",
+    "descricao": "Queijo flamengo fatiado"
+  },
+  {
+    "id": 13,
+    "nome": "Fiambre Extra Continente",
+    "categoria": "Charcutaria",
+    "preco": 2.49,
+    "quantidade": "200 g",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000001/images/col/fiambre.jpg",
+    "descricao": "Fiambre extra fatiado"
+  },
+  {
+    "id": 14,
+    "nome": "Iogurte Natural Continente",
+    "categoria": "Lactin\u00edos",
+    "preco": 1.89,
+    "quantidade": "4x125 g",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000002/images/col/iogurte.jpg",
+    "descricao": "Iogurte natural sem a\u00e7\u00facar"
+  },
+  {
+    "id": 15,
+    "nome": "Batatas Continente",
+    "categoria": "Frutas e Vegetais",
+    "preco": 1.29,
+    "quantidade": "2 kg",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000003/images/col/batatas.jpg",
+    "descricao": "Batatas para cozer"
+  },
+  {
+    "id": 16,
+    "nome": "Tomate Rama",
+    "categoria": "Frutas e Vegetais",
+    "preco": 1.99,
+    "quantidade": "1 kg",
+    "marca": "",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000004/images/col/tomate.jpg",
+    "descricao": "Tomate rama"
+  },
+  {
+    "id": 17,
+    "nome": "Cebola",
+    "categoria": "Frutas e Vegetais",
+    "preco": 0.79,
+    "quantidade": "1 kg",
+    "marca": "",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000005/images/col/cebola.jpg",
+    "descricao": "Cebola"
+  },
+  {
+    "id": 18,
+    "nome": "Banana",
+    "categoria": "Frutas e Vegetais",
+    "preco": 1.29,
+    "quantidade": "1 kg",
+    "marca": "",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000006/images/col/banana.jpg",
+    "descricao": "Banana"
+  },
+  {
+    "id": 19,
+    "nome": "Atum em Azeite Continente",
+    "categoria": "Mercearia",
+    "preco": 1.49,
+    "quantidade": "120 g (3x)",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000007/images/col/atum.jpg",
+    "descricao": "Atum em azeite pack 3 latas"
+  },
+  {
+    "id": 20,
+    "nome": "Feij\u00e3o Cozido Continente",
+    "categoria": "Mercearia",
+    "preco": 0.69,
+    "quantidade": "400 g",
+    "marca": "Continente",
+    "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw0000008/images/col/feijao.jpg",
+    "descricao": "Feij\u00e3o cozido com molho"
+  }
+]

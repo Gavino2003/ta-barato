@@ -1,0 +1,92 @@
+{
+  "leite": {
+    "continente": 1.68,
+    "minipreco": 0.79,
+    "pingodoce": 0.89,
+    "lidl": 0.79,
+    "auchan": 0.85,
+    "mercadona": 0.82,
+    "intermarche": 0.88
+  },
+  "arroz": {
+    "continente": 1.59,
+    "minipreco": 0.99,
+    "pingodoce": 0.59,
+    "lidl": 0.99,
+    "auchan": 1.1,
+    "mercadona": 1.05,
+    "intermarche": 1.15
+  },
+  "ovos": {
+    "continente": 2.86,
+    "minipreco": 2.2,
+    "pingodoce": 2.4,
+    "lidl": 2.2,
+    "auchan": 2.4,
+    "mercadona": 2.3,
+    "intermarche": 2.45
+  },
+  "azeite": {
+    "continente": 3.39,
+    "minipreco": 4.29,
+    "pingodoce": 0.59,
+    "lidl": 4.49,
+    "auchan": 4.79,
+    "mercadona": 4.5,
+    "intermarche": 4.85
+  },
+  "massa": {
+    "continente": 2.19,
+    "minipreco": 0.59,
+    "pingodoce": 0.59,
+    "lidl": 0.59,
+    "auchan": 0.65,
+    "mercadona": 0.62,
+    "intermarche": 0.69
+  },
+  "agua": {
+    "continente": 6.96,
+    "minipreco": 0.19,
+    "pingodoce": 0.22,
+    "lidl": 0.19,
+    "auchan": 0.22,
+    "mercadona": 0.2,
+    "intermarche": 0.24
+  },
+  "cafe": {
+    "continente": 3.69,
+    "minipreco": 2.49,
+    "pingodoce": 2.69,
+    "lidl": 2.49,
+    "auchan": 2.69,
+    "mercadona": 2.59,
+    "intermarche": 2.79
+  },
+  "acucar": {
+    "continente": 1.98,
+    "minipreco": 0.85,
+    "pingodoce": 0.92,
+    "lidl": 0.85,
+    "auchan": 0.92,
+    "mercadona": 0.88,
+    "intermarche": 0.95
+  },
+  "farinha": {
+    "continente": 0.69,
+    "minipreco": 0.65,
+    "pingodoce": 0.72,
+    "lidl": 0.65,
+    "auchan": 0.72,
+    "mercadona": 0.68,
+    "intermarche": 0.75
+  },
+  "manteiga": {
+    "continente": 5.49,
+    "minipreco": 1.79,
+    "pingodoce": 1.89,
+    "lidl": 1.79,
+    "auchan": 1.89,
+    "mercadona": 1.85,
+    "intermarche": 1.95
+  }
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "produto": "farinha de trigo",
+    "categoria": "Mercearia",
+    "precos": {
+      "continente": {
+        "preco": 0.99,
+        "quantidade": "emb. 1 kg + 10% GRÁTIS",
+        "marca": "Farinha",
+        "nome": "Farinha de Trigo para Bolos com Fermento Nacional",
+        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw79a054d6/images/col/768/7683654-cima.jpg?sw=280&sh=280",
+        "url": "https://www.continente.pt/produto/farinha-de-trigo-para-bolos-com-fermento-nacional-nacional-7683654.html"
+      },
+      "pingodoce": {
+        "preco": 0.59,
+        "quantidade": "1 Kg",
+        "marca": "Pingo Doce",
+        "nome": "Farinha de Trigo T55 sem Fermento",
+        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dw7222578d/images/medium/650222_d1abc7b5ff3e335760114e536064ccec.png?sw=198",
+        "url": "https://www.pingodoce.pt/home/produtos/mercearia/farinha-fermento-e-acucar/farinha-fermento-e-pao-ralado/farinha-de-trigo-t55-sem-fermento-pingo-doce-650222.html"
+      },
+      "minipreco": {
+        "preco": 0.97,
+        "quantidade": "1 kg",
+        "marca": "NACIONAL",
+        "nome": "NACIONAL Farinha para todos os Usos Culinários Sem Fermento T65 1 kg",
+        "imagem": "https://s2.minipreco.pt/medias/h23/hb4/9103460663326.jpg",
+        "url": "https://www.minipreco.pt/produtos/mercearia/farinhas-e-fermentos/farinha-de-trigo/p/39536"
+      }
+    },
+    "maisBarato": "pingodoce",
+    "produtosSemelhantes": true,
+    "dataAtualizacao": "2026-03-20T16:33:08.757Z"
+  }
+]

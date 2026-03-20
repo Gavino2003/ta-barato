@@ -1,0 +1,47 @@
+# Exemplo de GitHub Action para atualizar preços automaticamente
+#
+# Para usar:
+# 1. Cria pasta .github/workflows/
+# 2. Copia este ficheiro para .github/workflows/update-prices.yml
+# 3. Faz commit e push
+# 4. A action vai correr diariamente às 2h UTC
+
+name: Atualizar Preços
+
+on:
+  schedule:
+    # Corre todos os dias às 2h UTC (3h em Portugal no inverno, 4h no verão)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Permite correr manualmente
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar scraper
+        run: npm run scrape
+
+      - name: Commit preços atualizados
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/prices.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Atualizar preços - $(date +'%Y-%m-%d %H:%M')"
+          git push
+
+# NOTA:
+# - Usa npm run scrape (simulado) por padrão
+# - Para usar scraping real, muda para: npm run scrape:real
+# - Precisa de configurar URLS e seletores primeiro!
