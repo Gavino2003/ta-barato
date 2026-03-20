@@ -1,36 +1,36 @@
 [
   {
     "id": 1,
-    "produto": "arroz",
+    "produto": "sal",
     "categoria": "Mercearia",
     "precos": {
       "continente": {
-        "preco": 1.59,
+        "preco": 0.29,
         "quantidade": "emb. 1 kg",
-        "marca": "Arroz",
-        "nome": "Arroz Carolino Bom Sucesso",
-        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwabb24884/images/col/276/2769753-frente.png?sw=280&sh=280",
-        "url": "https://www.continente.pt/produto/arroz-carolino-bom-sucesso-bom-sucesso-2769753.html"
+        "marca": "Sal",
+        "nome": "Sal Grosso Continente",
+        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw9455edbd/images/col/562/5621031-frente.jpg?sw=280&sh=280",
+        "url": "https://www.continente.pt/produto/sal-grosso-continente-continente-5621031.html"
       },
       "pingodoce": {
-        "preco": 1.99,
-        "quantidade": "1 Kg",
+        "preco": 0.29,
+        "quantidade": "0.25 Kg",
         "marca": "Pingo Doce",
-        "nome": "Arroz Basmati",
-        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dw88b3b9ad/images/medium/651101_a04370455f4a1deddb4ab4f9ae27d0e2.png?sw=198",
-        "url": "https://www.pingodoce.pt/home/produtos/mercearia/arroz-massa-e-leguminosas/arroz/arroz-basmati-pingo-doce-651101.html"
+        "nome": "Sal Fino",
+        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dwcfb2d95c/images/medium/1805_71a3d1f80982e7e0d935ec3619bfd1a1.png?sw=198",
+        "url": "https://www.pingodoce.pt/home/produtos/mercearia/temperos-e-molhos/sal/sal-fino-pingo-doce-1805.html"
       },
       "minipreco": {
-        "preco": 2.99,
-        "quantidade": "1 kg",
-        "marca": "CAÇAROLA",
-        "nome": "CAÇAROLA Arroz Basmati 1 kg",
-        "imagem": "https://s3.minipreco.pt/medias/h6e/h3d/9109270265886.jpg",
-        "url": "https://www.minipreco.pt/produtos/mercearia/acompanhamentos/arroz/p/20178"
+        "preco": 1.35,
+        "quantidade": "250 g",
+        "marca": "AUCHAN",
+        "nome": "AUCHAN Salada Camponesa 250 g",
+        "imagem": "https://s1.minipreco.pt/medias/h1d/h00/9203079086110.jpg",
+        "url": "https://www.minipreco.pt/produtos/frutas-e-vegetais/vegetais/legumes-para-saladas/p/900570"
       }
     },
     "maisBarato": "continente",
-    "produtosSemelhantes": true,
-    "dataAtualizacao": "2026-03-20T17:48:43.178Z"
+    "produtosSemelhantes": false,
+    "dataAtualizacao": "2026-03-20T17:51:25.858Z"
   }
 ]

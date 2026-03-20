@@ -25,7 +25,9 @@ async function scrapePingoDoce(searchQuery) {
   await page.setRequestInterception(true)
   page.on('request', (req) => {
     const type = req.resourceType()
-    if (type === 'image' || type === 'font' || type === 'media') {
+    const url = req.url()
+    if (type === 'image' || type === 'font' || type === 'media' || type === 'stylesheet' || 
+        url.includes('analytics') || url.includes('ads') || url.includes('tracker')) {
       req.abort()
       return
     }
@@ -39,10 +41,10 @@ async function scrapePingoDoce(searchQuery) {
 
     await page.goto(searchUrl, {
       waitUntil: 'domcontentloaded',
-      timeout: 18000
+      timeout: 14000
     })
 
-    await sleep(800)
+    await sleep(300)
     console.log('✓ Pesquisa executada')
 
     // Procurar produtos

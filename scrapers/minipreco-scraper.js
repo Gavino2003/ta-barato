@@ -32,7 +32,9 @@ async function scrapeMinipeco(searchQuery) {
   await page.setRequestInterception(true)
   page.on('request', (req) => {
     const type = req.resourceType()
-    if (type === 'image' || type === 'font' || type === 'media') {
+    const url = req.url()
+    if (type === 'image' || type === 'font' || type === 'media' || type === 'stylesheet' || 
+        url.includes('analytics') || url.includes('ads') || url.includes('tracker')) {
       req.abort()
       return
     }
@@ -53,7 +55,7 @@ async function scrapeMinipeco(searchQuery) {
       try {
         await page.goto(url, {
           waitUntil: 'domcontentloaded',
-          timeout: 15000
+          timeout: 12000
         })
 
         await sleep(800)

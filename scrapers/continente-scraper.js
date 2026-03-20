@@ -25,7 +25,10 @@ async function scrapeContinente(searchQuery) {
   await page.setRequestInterception(true)
   page.on('request', (req) => {
     const type = req.resourceType()
-    if (type === 'image' || type === 'font' || type === 'media') {
+    const url = req.url()
+    // Bloquear agressivamente: images, fonts, media, css, XHR para ads
+    if (type === 'image' || type === 'font' || type === 'media' || type === 'stylesheet' || 
+        url.includes('analytics') || url.includes('ads') || url.includes('tracker')) {
       req.abort()
       return
     }
@@ -38,10 +41,10 @@ async function scrapeContinente(searchQuery) {
 
     await page.goto(url, {
       waitUntil: 'domcontentloaded',
-      timeout: 18000
+      timeout: 14000
     })
 
-    await sleep(800)
+    await sleep(300)
     console.log('✓ Página carregada')
 
     // Extrair dados do PRIMEIRO produto (usar seletor correto: .productTile ou .product-tile)
