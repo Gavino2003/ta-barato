@@ -56,67 +56,95 @@ async function scrapeMinipeco(searchQuery) {
           timeout: 12000
         })
 
-        await sleep(1000)
+        await sleep(800)
         console.log('✓ Página carregada')
 
         // Usar o seletor correto identificado: .product-list__item
-        const produtosCards = await page.evaluate(() => {
-          // Procurar todos os cards de produtos com o seletor correto
-          const cards = Array.from(document.querySelectorAll('.product-list__item'))
-
-          return cards.slice(0, 10).map(card => {
-            // Nome do produto (está no link .productMainLink)
-            const linkEl = card.querySelector('.productMainLink')
-            const textoCompleto = linkEl?.textContent?.trim() || ''
-
-            // O texto tem formato: "MARCA Produto Quantidade\n\npreço..."
-            // Separar por quebras de linha e pegar só a primeira parte
-            const nome = textoCompleto.split('\n')[0].trim()
-
-            // Preço (tem classe .price ou similar)
-            const precoEl = card.querySelector('.price, [class*="price"]')
-            const precoTexto = precoEl?.textContent?.trim() || ''
-
-            // A quantidade geralmente está no nome (ex: "500 g", "1 kg")
-            const quantidadeMatch = nome.match(/(\d+\s*(g|kg|ml|l|un|unidades))/i)
-            const quantidade = quantidadeMatch ? quantidadeMatch[0] : ''
-
-            // Marca (geralmente é a primeira palavra do nome)
-            const marca = nome.split(' ')[0] || ''
-
-            // Imagem do produto
-            const imgEl = card.querySelector('img')
-            const srcset = imgEl?.getAttribute('srcset') || imgEl?.getAttribute('data-srcset') || ''
-            const srcsetFirst = srcset ? srcset.split(',')[0].trim().split(' ')[0] : ''
-            const imagem = imgEl
-              ? (
-                  imgEl.src ||
-                  imgEl.currentSrc ||
-                  imgEl.dataset.src ||
-                  imgEl.getAttribute('data-src') ||
-                  srcsetFirst ||
-                  imgEl.getAttribute('data-original') ||
-                  ''
-                )
-              : ''
-
-            // URL do produto (usar o linkEl já declarado acima)
-            let url = linkEl?.href || ''
-            // Se o URL for relativo, adicionar o domínio
-            if (url && !url.startsWith('http')) {
-              url = 'https://www.minipreco.pt' + url
+        const produtosCards = await Promise.race([
+          page.evaluate(() => {
+            // Procurar todos os cards de produtos com o seletor correto
+            // Tentar múltiplos selectores em caso de mudança no HTML
+            const selectors = [
+              '.product-list__item',
+              '[class*="product"][class*="card"]',
+              '[class*="product"][class*="item"]',
+              '[class*="product-tile"]',
+              '.product-card'
+            ]
+            
+            let cards = []
+            for (const selector of selectors) {
+              cards = Array.from(document.querySelectorAll(selector))
+              if (cards.length > 0) {
+                console.log(`Found ${cards.length} products with selector: ${selector}`)
+                break
+              }
             }
 
-            return {
-              nome,
-              precoTexto,
-              quantidade,
-              marca,
-              imagem,
-              url
+            if (cards.length === 0) {
+              return []
             }
-          }).filter(p => p.nome && p.precoTexto)
-        })
+
+            return cards.slice(0, 10).map(card => {
+              // Nome do produto (está no link .productMainLink ou alternativas)
+              let linkEl = card.querySelector('.productMainLink')
+              if (!linkEl) linkEl = card.querySelector('a[class*="product"]')
+              if (!linkEl) linkEl = card.querySelector('a')
+              
+              const textoCompleto = linkEl?.textContent?.trim() || ''
+              const nome = textoCompleto.split('\n')[0].trim()
+
+              // Preço (tem classe .price ou similar)
+              const precoEl = card.querySelector('.price, [class*="price"]')
+              const precoTexto = precoEl?.textContent?.trim() || ''
+
+              // A quantidade geralmente está no nome (ex: "500 g", "1 kg")
+              const quantidadeMatch = nome.match(/(\d+\s*(g|kg|ml|l|un|unidades))/i)
+              const quantidade = quantidadeMatch ? quantidadeMatch[0] : ''
+
+              // Marca (geralmente é a primeira palavra do nome)
+              const marca = nome.split(' ')[0] || ''
+
+              // Imagem do produto
+              const imgEl = card.querySelector('img')
+              const srcset = imgEl?.getAttribute('srcset') || imgEl?.getAttribute('data-srcset') || ''
+              const srcsetFirst = srcset ? srcset.split(',')[0].trim().split(' ')[0] : ''
+              const imagem = imgEl
+                ? (
+                    imgEl.src ||
+                    imgEl.currentSrc ||
+                    imgEl.dataset.src ||
+                    imgEl.getAttribute('data-src') ||
+                    srcsetFirst ||
+                    imgEl.getAttribute('data-original') ||
+                    ''
+                  )
+                : ''
+
+              // URL do produto (usar o linkEl já declarado acima)
+              let url = linkEl?.href || ''
+              // Se o URL for relativo, adicionar o domínio
+              if (url && !url.startsWith('http')) {
+                url = 'https://www.minipreco.pt' + url
+              }
+
+              return {
+                nome,
+                precoTexto,
+                quantidade,
+                marca,
+                imagem,
+                url
+              }
+            }).filter(p => p.nome && p.precoTexto)
+          }),
+          new Promise((resolve) => {
+            setTimeout(() => {
+              console.log('⏱️  page.evaluate() timeout - retornando vazio')
+              resolve([])
+            }, 8000)
+          })
+        ])
 
         console.log(`📦 Encontrados ${produtosCards.length} produtos`)
 
