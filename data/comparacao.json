@@ -1,36 +1,36 @@
 [
   {
     "id": 1,
-    "produto": "farinha de trigo",
+    "produto": "leite",
     "categoria": "Mercearia",
     "precos": {
       "continente": {
-        "preco": 0.99,
-        "quantidade": "emb. 1 kg + 10% GRÁTIS",
-        "marca": "Farinha",
-        "nome": "Farinha de Trigo para Bolos com Fermento Nacional",
-        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw79a054d6/images/col/768/7683654-cima.jpg?sw=280&sh=280",
-        "url": "https://www.continente.pt/produto/farinha-de-trigo-para-bolos-com-fermento-nacional-nacional-7683654.html"
+        "preco": 0.86,
+        "quantidade": "emb. 1 lt",
+        "marca": "Leite",
+        "nome": "Leite UHT Meio Gordo Continente",
+        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw8581d663/images/col/687/6879912-frente.jpg?sw=280&sh=280",
+        "url": "https://www.continente.pt/produto/leite-uht-meio-gordo-continente-continente-6879912.html"
       },
       "pingodoce": {
-        "preco": 0.59,
-        "quantidade": "1 Kg",
+        "preco": 0.86,
+        "quantidade": "1 L",
         "marca": "Pingo Doce",
-        "nome": "Farinha de Trigo T55 sem Fermento",
-        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dw7222578d/images/medium/650222_d1abc7b5ff3e335760114e536064ccec.png?sw=198",
-        "url": "https://www.pingodoce.pt/home/produtos/mercearia/farinha-fermento-e-acucar/farinha-fermento-e-pao-ralado/farinha-de-trigo-t55-sem-fermento-pingo-doce-650222.html"
+        "nome": "Leite UHT Meio Gordo",
+        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dw509c2147/images/medium/48150_851680f4ffe27c50deefb140a64913a4.png?sw=198",
+        "url": "https://www.pingodoce.pt/home/produtos/leite-e-bebidas-vegetais%E2%80%8B/leite/leite-meio-gordo-e-gordo%E2%80%8B/leite-uht-meio-gordo-pingo-doce-48150.html"
       },
       "minipreco": {
-        "preco": 0.97,
-        "quantidade": "1 kg",
-        "marca": "NACIONAL",
-        "nome": "NACIONAL Farinha para todos os Usos Culinários Sem Fermento T65 1 kg",
-        "imagem": "https://s2.minipreco.pt/medias/h23/hb4/9103460663326.jpg",
-        "url": "https://www.minipreco.pt/produtos/mercearia/farinhas-e-fermentos/farinha-de-trigo/p/39536"
+        "preco": 1.29,
+        "quantidade": "1 L",
+        "marca": "MIMOSA",
+        "nome": "MIMOSA Leite Magro Sem Lactose 1 L",
+        "imagem": "https://s1.minipreco.pt/medias/h69/hb7/9081774702622.jpg",
+        "url": "https://www.minipreco.pt/produtos/laticinios-e-ovos/leite/bebidas-vegetais/p/195043"
       }
     },
-    "maisBarato": "pingodoce",
+    "maisBarato": "continente",
     "produtosSemelhantes": true,
-    "dataAtualizacao": "2026-03-20T16:33:08.757Z"
+    "dataAtualizacao": "2026-03-20T16:43:21.202Z"
   }
 ]

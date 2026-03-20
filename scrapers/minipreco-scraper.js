@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer')
+const { getBrowserConfig } = require('./browser-config')
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -16,10 +16,8 @@ async function scrapeMinipeco(searchQuery) {
   console.log('\n🟡 MINIPREÇO - ' + searchQuery)
   console.log('━'.repeat(60))
 
-  const browser = await puppeteer.launch({
-    headless: false,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  })
+  const { puppeteer, launchOptions } = await getBrowserConfig()
+  const browser = await puppeteer.launch(launchOptions)
 
   const page = await browser.newPage()
   await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
