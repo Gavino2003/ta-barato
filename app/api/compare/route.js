@@ -1,8 +1,11 @@
 import { NextResponse } from 'next/server'
-const { compareProductSmart } = require('../../../scrapers/compare-product-smart')
+
+export const runtime = 'nodejs'
+export const maxDuration = 60
 
 export async function POST(request) {
   try {
+    const { compareProductSmart } = require('../../../scrapers/compare-product-smart')
     const { query } = await request.json()
 
     if (!query || query.trim().length === 0) {
