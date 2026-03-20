@@ -14,6 +14,9 @@ const bodyFont = Source_Sans_3({
 export const metadata = {
   title: 'TáBarato - O teu comparador de preços tuga',
   description: 'Encontra os produtos mais baratos entre Continente, Pingo Doce e Minipreço. Comparação inteligente com web scraping real!',
+  icons: {
+    icon: '/favicon.ico',
+  }
 }
 
 export default function RootLayout({ children }) {
