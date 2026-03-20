@@ -6,6 +6,7 @@
     }
   },
   "env": {
+    "PUPPETEER_SKIP_DOWNLOAD": "true",
     "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true",
     "PUPPETEER_EXECUTABLE_PATH": "/opt/nodejs/node_modules/@sparticuz/chromium/bin"
   }
