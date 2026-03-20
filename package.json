@@ -1,7 +1,7 @@
 {
-  "name": "comparador-precos",
+  "name": "tabarato",
   "version": "1.0.0",
-  "description": "",
+  "description": "O teu comparador de preços tuga! Encontra os produtos mais baratos entre supermercados portugueses.",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",

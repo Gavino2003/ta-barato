@@ -72,10 +72,10 @@ export default function Home() {
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: '700', margin: '0 0 10px 0' }}>
-            Comparador de Preços PT
+            🛒 TáBarato
           </h1>
           <p style={{ margin: 0, fontSize: '18px', opacity: 0.95 }}>
-            Dados 100% reais obtidos por web scraping
+            O teu comparador de preços tuga!
           </p>
         </div>
       </header>
