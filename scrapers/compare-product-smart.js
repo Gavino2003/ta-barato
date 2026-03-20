@@ -4,6 +4,10 @@ const { scrapeMinipeco } = require('./minipreco-scraper')
 const fs = require('fs')
 const path = require('path')
 
+function isServerlessRuntime() {
+  return Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME)
+}
+
 // Função para calcular similaridade entre dois textos (0 a 1)
 function calcularSimilaridade(texto1, texto2) {
   const t1 = texto1.toLowerCase().trim()
@@ -153,11 +157,24 @@ async function compareProductSmart(searchQuery) {
     dataAtualizacao: new Date().toISOString()
   }
 
-  // Guardar em ficheiro
-  const outputPath = path.join(process.cwd(), 'data/comparacao.json')
-  fs.writeFileSync(outputPath, JSON.stringify([comparacao], null, 2))
+  // Em Vercel o filesystem de /var/task e read-only, por isso nao persistimos em disco.
+  if (isServerlessRuntime()) {
+    console.log('\nℹ️ Ambiente serverless detetado: a comparação será devolvida via API sem escrita em disco.')
+  } else {
+    const outputPath = path.join(process.cwd(), 'data/comparacao.json')
 
-  console.log(`\n✅ Dados guardados em: ${outputPath}`)
+    try {
+      fs.writeFileSync(outputPath, JSON.stringify([comparacao], null, 2))
+      console.log(`\n✅ Dados guardados em: ${outputPath}`)
+    } catch (err) {
+      if (err && err.code === 'EROFS') {
+        console.log('\n⚠️ Sistema de ficheiros read-only: a comparação foi gerada mas não foi guardada em disco.')
+      } else {
+        throw err
+      }
+    }
+  }
+
   console.log('\n🌐 Podes ver a comparação em: http://localhost:3000\n')
 
   return comparacao
