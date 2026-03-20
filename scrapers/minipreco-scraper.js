@@ -105,21 +105,29 @@ async function scrapeMinipeco(searchQuery) {
               // Marca (geralmente é a primeira palavra do nome)
               const marca = nome.split(' ')[0] || ''
 
-              // Imagem do produto
+              // Imagem do produto - preferir URLs HTTP sobre data URIs  
               const imgEl = card.querySelector('img')
               const srcset = imgEl?.getAttribute('srcset') || imgEl?.getAttribute('data-srcset') || ''
               const srcsetFirst = srcset ? srcset.split(',')[0].trim().split(' ')[0] : ''
-              const imagem = imgEl
-                ? (
-                    imgEl.src ||
-                    imgEl.currentSrc ||
-                    imgEl.dataset.src ||
-                    imgEl.getAttribute('data-src') ||
-                    srcsetFirst ||
-                    imgEl.getAttribute('data-original') ||
-                    ''
-                  )
-                : ''
+              
+              let imagem = ''
+              if (imgEl) {
+                // Tentar vários atributos em ordem de preferência
+                const candidatos = [
+                  imgEl.src,
+                  imgEl.currentSrc,
+                  imgEl.dataset.src,
+                  imgEl.getAttribute('data-src'),
+                  srcsetFirst,
+                  imgEl.getAttribute('data-original')
+                ].filter(url => url && typeof url === 'string')
+                
+                // Preferir URLs HTTP - descartar base64 data URIs
+                imagem = candidatos.find(url => url.startsWith('http')) || 
+                         candidatos.find(url => url.startsWith('//')) ||
+                         candidatos[0] || 
+                         ''
+              }
 
               // URL do produto (usar o linkEl já declarado acima)
               let url = linkEl?.href || ''
