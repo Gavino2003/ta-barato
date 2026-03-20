@@ -165,7 +165,7 @@ export default function Home() {
                         <img
                           src={normalizeImageUrl(supermercado.dados.imagem)}
                           alt={supermercado.dados.nome}
-                          className="h-full w-full object-contain object-center"
+                          className="max-h-full w-auto max-w-full object-contain"
                           loading="lazy"
                           onError={(e) => {
                             e.currentTarget.style.display = 'none'
