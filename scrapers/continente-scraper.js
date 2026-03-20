@@ -22,17 +22,26 @@ async function scrapeContinente(searchQuery) {
   const page = await browser.newPage()
   await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
   await page.setViewport({ width: 1920, height: 1080 })
+  await page.setRequestInterception(true)
+  page.on('request', (req) => {
+    const type = req.resourceType()
+    if (type === 'image' || type === 'font' || type === 'media') {
+      req.abort()
+      return
+    }
+    req.continue()
+  })
 
   try {
     const url = `https://www.continente.pt/pesquisa/?q=${encodeURIComponent(searchQuery)}`
     console.log(`📍 URL: ${url}`)
 
     await page.goto(url, {
-      waitUntil: 'networkidle2',
-      timeout: 30000
+      waitUntil: 'domcontentloaded',
+      timeout: 15000
     })
 
-    await sleep(3000)
+    await sleep(1200)
     console.log('✓ Página carregada')
 
     // Extrair dados do PRIMEIRO produto (usar seletor correto: .productTile ou .product-tile)

@@ -8,6 +8,27 @@ function isServerlessRuntime() {
   return Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME)
 }
 
+function withTimeout(promise, ms, label) {
+  let timer
+  const timeout = new Promise((resolve) => {
+    timer = setTimeout(() => {
+      console.log(`⏱️ ${label} excedeu ${ms}ms e foi ignorado para manter a API rápida.`)
+      resolve(null)
+    }, ms)
+  })
+
+  return Promise.race([
+    promise
+      .then((value) => value)
+      .catch((err) => {
+        console.log(`⚠️ ${label} falhou: ${err.message}`)
+        return null
+      })
+      .finally(() => clearTimeout(timer)),
+    timeout
+  ])
+}
+
 // Função para calcular similaridade entre dois textos (0 a 1)
 function calcularSimilaridade(texto1, texto2) {
   const t1 = texto1.toLowerCase().trim()
@@ -36,15 +57,17 @@ function normalizarNome(nome) {
 }
 
 async function compareProductSmart(searchQuery) {
+  const scraperTimeoutMs = Number(process.env.SCRAPER_TIMEOUT_MS || (isServerlessRuntime() ? 18000 : 25000))
+
   console.log(`\n🔍 COMPARADOR INTELIGENTE - ${searchQuery}`)
   console.log('='.repeat(80))
   console.log('\n🚀 A executar scrapers em PARALELO...\n')
 
   // Executar os 3 scrapers em paralelo
   const results = await Promise.allSettled([
-    scrapeContinente(searchQuery),
-    scrapePingoDoce(searchQuery),
-    scrapeMinipeco(searchQuery)
+    withTimeout(scrapeContinente(searchQuery), scraperTimeoutMs, 'Continente'),
+    withTimeout(scrapePingoDoce(searchQuery), scraperTimeoutMs, 'Pingo Doce'),
+    withTimeout(scrapeMinipeco(searchQuery), scraperTimeoutMs, 'Minipreço')
   ])
 
   console.log('\n' + '='.repeat(80))
