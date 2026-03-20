@@ -75,6 +75,9 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-transparent to-white/30" />
       <section className="relative z-10 mx-auto max-w-6xl px-4 pt-5 pb-12 sm:px-5 sm:pt-8 sm:pb-16">
         <header className="mb-4">
+          <div className="mb-3">
+            <img src="/logo.jpg" alt="TáBarato Logo" className="h-16 w-auto" />
+          </div>
           <p className="m-0 text-[11px] font-bold tracking-[0.13em] text-[#607065]">COMPARADOR PT</p>
           <h1 className="m-0 mt-1 text-[clamp(2rem,9vw,3.8rem)] leading-[0.95] font-extrabold [font-family:var(--font-heading)]">TáBarato</h1>
           <p className="mt-2 max-w-[40ch] text-[#607065]">Compara preços reais entre Continente, Pingo Doce e Minipreço.</p>
