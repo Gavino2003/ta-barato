@@ -12,6 +12,13 @@ function extractPrice(text) {
   return null
 }
 
+function normalizeImageUrl(url) {
+  if (!url) return ''
+  if (url.startsWith('//')) return `https:${url}`
+  if (url.startsWith('/')) return `https://www.minipreco.pt${url}`
+  return url
+}
+
 async function scrapeMinipeco(searchQuery) {
   console.log('\n🟡 MINIPREÇO - ' + searchQuery)
   console.log('━'.repeat(60))
@@ -79,7 +86,19 @@ async function scrapeMinipeco(searchQuery) {
 
             // Imagem do produto
             const imgEl = card.querySelector('img')
-            const imagem = imgEl ? (imgEl.src || imgEl.dataset.src || imgEl.getAttribute('data-src') || '') : ''
+            const srcset = imgEl?.getAttribute('srcset') || imgEl?.getAttribute('data-srcset') || ''
+            const srcsetFirst = srcset ? srcset.split(',')[0].trim().split(' ')[0] : ''
+            const imagem = imgEl
+              ? (
+                  imgEl.src ||
+                  imgEl.currentSrc ||
+                  imgEl.dataset.src ||
+                  imgEl.getAttribute('data-src') ||
+                  srcsetFirst ||
+                  imgEl.getAttribute('data-original') ||
+                  ''
+                )
+              : ''
 
             // URL do produto (usar o linkEl já declarado acima)
             let url = linkEl?.href || ''
@@ -127,7 +146,7 @@ async function scrapeMinipeco(searchQuery) {
               preco: preco,
               quantidade: produto.quantidade,
               marca: produto.marca || produto.nome.split(' ')[0],
-              imagem: produto.imagem,
+              imagem: normalizeImageUrl(produto.imagem),
               url: produto.url,
               encontrado: true
             }
