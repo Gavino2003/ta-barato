@@ -1,4 +1,5 @@
 import { Space_Grotesk, Source_Sans_3 } from 'next/font/google'
+import './globals.css'
 
 const headingFont = Space_Grotesk({
   subsets: ['latin'],
@@ -18,14 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt" className={`${headingFont.variable} ${bodyFont.variable}`}>
-      <body
-        style={{
-          margin: 0,
-          fontFamily: 'var(--font-body), sans-serif',
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale'
-        }}
-      >
+      <body className="antialiased [font-family:var(--font-body)]">
         {children}
       </body>
     </html>
