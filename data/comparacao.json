@@ -1,36 +1,36 @@
 [
   {
     "id": 1,
-    "produto": "sal",
+    "produto": "azeite",
     "categoria": "Mercearia",
     "precos": {
       "continente": {
-        "preco": 0.29,
-        "quantidade": "emb. 1 kg",
-        "marca": "Sal",
-        "nome": "Sal Grosso Continente",
-        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dw9455edbd/images/col/562/5621031-frente.jpg?sw=280&sh=280",
-        "url": "https://www.continente.pt/produto/sal-grosso-continente-continente-5621031.html"
+        "preco": 3.79,
+        "quantidade": "emb. 75 cl",
+        "marca": "Azeite",
+        "nome": "Azeite Continente",
+        "imagem": "https://www.continente.pt/dw/image/v2/BDVS_PRD/on/demandware.static/-/Sites-col-master-catalog/default/dwc03f644c/images/col/708/7082533-frente.jpg?sw=280&sh=280",
+        "url": "https://www.continente.pt/produto/azeite-continente-continente-7082533.html"
       },
       "pingodoce": {
-        "preco": 0.29,
-        "quantidade": "0.25 Kg",
+        "preco": 16.55,
+        "quantidade": "3 L",
         "marca": "Pingo Doce",
-        "nome": "Sal Fino",
-        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dwcfb2d95c/images/medium/1805_71a3d1f80982e7e0d935ec3619bfd1a1.png?sw=198",
-        "url": "https://www.pingodoce.pt/home/produtos/mercearia/temperos-e-molhos/sal/sal-fino-pingo-doce-1805.html"
+        "nome": "Azeite Virgem Extra Nossas Planicies",
+        "imagem": "https://www.pingodoce.pt/dw/image/v2/BLJJ_PRD/on/demandware.static/-/Sites-pingo-doce-master/default/dw4e6b00d5/images/medium/705656_9ade551aa6704f8f879063d6a09875fc.png?sw=198",
+        "url": "https://www.pingodoce.pt/home/produtos/mercearia/azeite-oleo-e-vinagre/azeite/azeite-virgem-extra-nossas-planicies-pingo-doce-705656.html"
       },
       "minipreco": {
-        "preco": 1.35,
-        "quantidade": "250 g",
-        "marca": "AUCHAN",
-        "nome": "AUCHAN Salada Camponesa 250 g",
-        "imagem": "https://s1.minipreco.pt/medias/h1d/h00/9203079086110.jpg",
-        "url": "https://www.minipreco.pt/produtos/frutas-e-vegetais/vegetais/legumes-para-saladas/p/900570"
+        "preco": 4.69,
+        "quantidade": "750 ml",
+        "marca": "OLIVEIRA",
+        "nome": "OLIVEIRA DA SERRA Azeite Virgem Extra Único 750 ml",
+        "imagem": "https://s3.minipreco.pt/medias/hf7/hfe/9115071479838.jpg",
+        "url": "https://www.minipreco.pt/produtos/mercearia/oleo-azeite-e-vinagre/azeite/p/177950"
       }
     },
     "maisBarato": "continente",
     "produtosSemelhantes": false,
-    "dataAtualizacao": "2026-03-20T17:51:25.858Z"
+    "dataAtualizacao": "2026-03-20T17:58:08.847Z"
   }
 ]

@@ -160,12 +160,12 @@ export default function Home() {
                       )}
                     </div>
 
-                    <div className="grid h-[clamp(170px,24vw,250px)] min-h-[170px] w-full place-items-center border-b border-[#d9ddd7] bg-[#f8faf8] p-2 sm:h-[clamp(190px,18vw,260px)] sm:min-h-[190px]">
+                    <div className="grid h-[clamp(170px,24vw,250px)] min-h-[170px] w-full place-items-center border-b border-[#d9ddd7] bg-[#f8faf8] p-2 sm:h-[clamp(190px,18vw,260px)] sm:min-h-[190px] overflow-hidden">
                       {supermercado.dados.imagem ? (
                         <img
                           src={normalizeImageUrl(supermercado.dados.imagem)}
                           alt={supermercado.dados.nome}
-                          className="block h-auto max-h-full w-auto max-w-full object-contain object-center"
+                          className="h-full w-full object-contain object-center"
                           loading="lazy"
                           onError={(e) => {
                             e.currentTarget.style.display = 'none'

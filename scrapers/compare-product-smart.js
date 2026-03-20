@@ -63,11 +63,29 @@ async function compareProductSmart(searchQuery) {
   console.log('='.repeat(80))
   console.log('\n🚀 A executar scrapers em PARALELO...\n')
 
-  // Executar os 3 scrapers em paralelo
+  // Função wrapper com retry
+  const runWithRetry = async (scrapeFn, label) => {
+    let lastError
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const timeout = attempt === 1 ? scraperTimeoutMs : scraperTimeoutMs + 3000
+        const result = await withTimeout(scrapeFn(), timeout, `${label}${attempt > 1 ? ` (retry)` : ''}`)
+        if (result) return result
+      } catch (error) {
+        lastError = error
+        if (attempt === 1) {
+          console.log(`⚠️ ${label} falhou na tentativa 1, retentando...`)
+        }
+      }
+    }
+    return null
+  }
+
+  // Executar os 3 scrapers em paralelo com retry
   const results = await Promise.allSettled([
-    withTimeout(scrapeContinente(searchQuery), scraperTimeoutMs, 'Continente'),
-    withTimeout(scrapePingoDoce(searchQuery), scraperTimeoutMs, 'Pingo Doce'),
-    withTimeout(scrapeMinipeco(searchQuery), scraperTimeoutMs, 'Minipreço')
+    runWithRetry(() => scrapeContinente(searchQuery), 'Continente'),
+    runWithRetry(() => scrapePingoDoce(searchQuery), 'Pingo Doce'),
+    runWithRetry(() => scrapeMinipeco(searchQuery), 'Minipreço')
   ])
 
   console.log('\n' + '='.repeat(80))
@@ -81,9 +99,9 @@ async function compareProductSmart(searchQuery) {
   const keys = ['continente', 'pingodoce', 'minipreco']
 
   results.forEach((result, index) => {
-    if (result.status === 'fulfilled' && result.value) {
-      const data = result.value
-
+    const data = result.status === 'fulfilled' ? result.value : null
+    
+    if (data) {
       produtos[keys[index]] = {
         preco: data.preco,
         quantidade: data.quantidade,
@@ -104,7 +122,8 @@ async function compareProductSmart(searchQuery) {
       console.log(`✅ ${names[index]}: ${data.nome}`)
       console.log(`   Preço: €${data.preco.toFixed(2)} | ${data.quantidade}`)
     } else {
-      console.log(`❌ ${names[index]}: Não encontrado`)
+      const reason = result.status === 'rejected' ? result.reason?.message : 'nenhum resultado'
+      console.log(`❌ ${names[index]}: Não encontrado (${reason})`)
     }
   })
 
